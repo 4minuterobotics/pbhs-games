@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>The Township</title>
+		<style>
+			body {
+				margin: 0;
+				background-color: #001f3f; /* Navy blue background */
+				background-image: url('/img/pompano-beach-high-school.jpeg');
+				background-repeat: no-repeat;
+				background-size: 50% 50%; /* Cover the entire page */
+				background-position: center; /* Center the background image */
+				/* the lines below center the game in the middle of the screen */
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				font-family: Arial, sans-serif;
+			}
+			#gameMenu,
+			#pauseMenu {
+				text-align: center;
+				color: red; /* Bright green text */
+			}
+			#lawrenceGameStart {
+				background-image: url('/img/harveycastle.png');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+			}
+			a,
+			button {
+				display: inline-block;
+				background: #1a1f1b;
+				color: #4dff4d;
+				padding: 10px 20px;
+				margin: 10px;
+				text-decoration: none;
+				border: 2px solid #4dff4d;
+				cursor: pointer;
+			}
+			a:hover,
+			button:hover {
+				background: #4dff4d;
+				color: #0a0f0b;
+			}
+			.homeScreen {
+				display: block;
+			}
+			.background-video {
+				position: fixed; /* Use fixed position to ensure the video covers the whole screen */
+				right: 0;
+				bottom: 0;
+				min-width: 100%;
+				min-height: 100%;
+			}
+			.grid-container {
+				display: flex;
+				flex-wrap: wrap;
+				padding: 20px;
+				position: absolute;
+				width: 100%;
+				top: 50px; /* Adjust as needed */
+				justify-content: space-around;
+			}
+			.grid-item {
+				flex-basis: calc(33.333% - 40px); /* Adjust based on margin */
+				margin: 20px;
+				height: 150px; /* Adjust as needed */
+				background-color: rgba(255, 215, 0, 0.6); /* Shiny gold with transparency */
+				backdrop-filter: blur(10px); /* Glassmorphism effect */
+				border-radius: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.18); /* For glass effect */
+				display: flex;
+				flex-direction: column;
+				align-items: center; /* Center children vertically */
+				justify-content: center; /* Center children horizontally */
+			}
+			@media (max-width: 960px) {
+				.grid-item {
+					flex-basis: calc(50% - 40px); /* Show 2 items per row on smaller screens */
+					margin: 20px;
+					height: calc(33.333% - 40px); /* Adjust based on the actual width to maintain aspect ratio */
+					/* Other styles remain the same */
+				}
+			}
+			.play-button {
+				padding: 10px 20px;
+				border: 2px solid rgba(255, 215, 0, 0.6); /* Shiny gold border with transparency */
+				border-radius: 5px;
+				background-color: rgba(255, 215, 0, 0.4); /* Shiny gold background with more transparency for glass effect */
+				color: #001f3f; /* Navy blue text */
+				font-size: 20px;
+				cursor: pointer;
+				backdrop-filter: blur(8px); /* Stronger glassmorphism effect */
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+				transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover effects */
+				text-decoration: none; /* Remove underline from links */
+				display: inline-flex; /* Align text inside the button */
+				justify-content: center; /* Center text horizontally */
+				align-items: center; /* Center text vertically */
+			}
+			/* Add content styles */
+			.content {
+				position: absolute;
+				z-index: 1; /* Ensure content is above the video */
+				padding: 20px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<video autoplay muted loop class="background-video homeScreen">
+			<source src="/videos/pexels-yan-krukov-9071401 (Original).mp4" type="video/mp4" />
+			Your browser does not support HTML5 video.
+		</video>
+		<div class="content homeScreen">
+			<img src="/img/pompano-beach-high-school.jpeg" />
+			<h1>PBHS Games</h1>
+			<p>By Advanced IT Honors</p>
+		</div>
+		<div class="grid-container homeScreen">
+			<!-- Generate 36 grid items for the 3x12 grid -->
+			<!-- This is a repetitive task, ideally done with a server-side language or JavaScript -->
+			<!-- This is just an example with 3 items for brevity -->
+			<div class="grid-item" id="lawrenceGameStart">
+				<h1>The Township</h1>
+				<a href="https://pbhs-games.vercel.app/" class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame2">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame3">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="lawrenceGame4">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame5">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame6">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="lawrenceGame7">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame8">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame9">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="lawrenceGame10">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame11">
+				<a class="play-button">Play</a>
+			</div>
+			<div class="grid-item" id="exampleGame12">
+				<a class="play-button">Play</a>
+			</div>
+			<!-- Add more .grid-item divs as needed -->
+		</div>
+	</body>
+</html>
